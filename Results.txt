@@ -1,0 +1,22 @@
+MonteCarloBasicExample.py
+
+    Current stock price: $180.45
+    Prediction for future stock price: $190.38
+
+BlackScholesBasicExample.py
+
+    The price today is: $101.38
+    Select the Strike Price: $95
+    The d1 parameter is: 0.6024945717585537
+    The d2 parameter is: 0.4024945717585537
+    Call option value according to the Black-Scholes model: $13.48
+    Put option value according to the Black-Scholes model: $3.79
+
+BlackScholesMonteCarloImplementation.py
+
+    The price today is: $101.38
+    Select the Strike Price: $95
+    How many iterations would you like to run the simulation for? 2000
+    Value of call option: $13.18
+    Value of put option: $3.83
+

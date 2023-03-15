@@ -27,7 +27,8 @@ def call_option_price(S, E, T, rf, sigma):
     # first we have to calculate the d1 and d2 parameters
     d1 = (log(S/E)+(rf+sigma*sigma/2.0)*T)/(sigma*sqrt(T))
     d2 = d1-sigma*sqrt(T)
-    print('The d1 and d2 parameters: %s, %s'% (d1, d2))
+    print('The d1 parameter is: %s' % d1)
+    print('The d2 parameter is: %s' % d2)
     # Use the N(x) to calculate the price of the option
     return S*stats.norm.cdf(d1)-E*exp(-rf*T)*stats.norm.cdf(d2)
 
@@ -38,7 +39,8 @@ def put_option_price(S, E, T, rf, sigma):
     # first we have to calculate the d1 and d2 parameters
     d1 = (log(S/E)+(rf+sigma*sigma/2.0)*T)/(sigma*sqrt(T))
     d2 = d1-sigma*sqrt(T)
-    print('The d1 and d2 parameters: %s, %s'% (d1, d2))
+    print('The d1 parameter is: %s' % d1)
+    print('The d2 parameter is: %s' % d2)
     # Use the N(x) to calculate the price of the option
     return -S*stats.norm.cdf(-d1)+E*exp(-rf*T)*stats.norm.cdf(-d2)
 
@@ -52,7 +54,7 @@ if __name__ == '__main__':
     # Using Chase Corporation Stock
     data = get_data('CCF', start_date, end_date)
     price_today = float(data['price'])
-
+    print('The price today is: $%.2f' % price_today)
     # Underlying stock price at t=0
     S0 = price_today
     # Strike price (the price at which a put or call option can be exercised)
@@ -65,8 +67,8 @@ if __name__ == '__main__':
     # volatility of the underlying stock (a standard deviation of log returns)
     sigma = 0.2
 
-    print("Call option according to the Black-Scholes model: ",
+    print("Call option value according to the Black-Scholes model: $%.2f" %
           call_option_price(S0, E, T, rf, sigma))
 
-    print("Put option according to the Black-Scholes model: ",
+    print("Put option value according to the Black-Scholes model: $%.2f" %
           put_option_price(S0, E, T, rf, sigma))

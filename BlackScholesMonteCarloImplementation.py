@@ -89,7 +89,7 @@ if __name__ == '__main__':
     # Using Chase Corporation Stock
     data = get_data('CCF', start_date, end_date)
     price_today = float(data['price'])
-
+    print('The price today is: $%.2f' % price_today)
     # Underlying stock price at t=0
     S0 = price_today
     # Strike price (the price at which a put or call option can be exercised)
@@ -105,5 +105,5 @@ if __name__ == '__main__':
     iterations = strike_price = int(input('How many iterations would you like to run the simulation for? '))
 
     model = OptionPricing(S0, E, T, rf, sigma, iterations)
-    print('Value of the call option is $%.2f'% model.call_option_simulation())
-    print('Value of the put option is $%.2f' % model.put_option_simulation())
+    print('Value of call option: $%.2f' % model.call_option_simulation())
+    print('Value of put option: $%.2f' % model.put_option_simulation())

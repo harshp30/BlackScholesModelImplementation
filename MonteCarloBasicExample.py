@@ -70,6 +70,7 @@ if __name__ == '__main__':
     # Underlying stock price at t=0
     S0 = price_today
 
+    # chosen values
     mu = 0.0002
     sigma = 0.01
     simulation_iterations = 1000
