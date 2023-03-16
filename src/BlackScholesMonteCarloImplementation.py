@@ -102,7 +102,7 @@ if __name__ == '__main__':
     # volatility of the underlying stock (a standard deviation of log returns)
     sigma = 0.2
     # Iteration amount for monte carlo simulation
-    iterations = strike_price = int(input('How many iterations would you like to run the simulation for? '))
+    iterations = int(input('How many iterations would you like to run the simulation for? '))
 
     model = OptionPricing(S0, E, T, rf, sigma, iterations)
     print('Value of call option: $%.2f' % model.call_option_simulation())
