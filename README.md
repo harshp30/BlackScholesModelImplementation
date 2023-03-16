@@ -10,17 +10,17 @@
 
 ### Technical Explanation:
 
-1. Monte Carlo Simulation Example || [MonteCarloBasicExample.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/MonteCarloBasicExample.py)
+1. Monte Carlo Simulation Example || [MonteCarloBasicExample.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/src/MonteCarloBasicExample.py)
 
     Hold
 
-    ![Monte Carlo Simulation Plot](MonteCarloSim.png)
+    ![Monte Carlo Simulation Plot](plots/MonteCarloSim.png)
 
-2. Black Scholes Model Example || [BlackScholesBasicExample.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/BlackScholesBasicExample.py)
+2. Black Scholes Model Example || [BlackScholesBasicExample.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/src/BlackScholesBasicExample.py)
 
     Hold
 
-2. Black Scholes Monte Carlo Implementation || [BlackScholesMonteCarloImplementation.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/BlackScholesMonteCarloImplementation.py)
+2. Black Scholes Monte Carlo Implementation || [BlackScholesMonteCarloImplementation.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/src/BlackScholesMonteCarloImplementation.py)
 
     Hold
 
