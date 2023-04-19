@@ -18,22 +18,22 @@
 
     > "The Monte Carlo simulation is a mathematical technique that predicts possible outcomes of an uncertain event."
 
-    In this case we are using Monte Carlo is being used to predict the future value of a stock
+    In this case, we are using Monte Carlo is being used to predict the future value of a stock
 
 
     *Setup*
     
-    I focused on TSLA stock where we get the stokc price 'today'. In order to run a Monte Carlo Simulation there are various variables. 
+    I focused on TSLA stock where we get the stock price 'today'. To run a Monte Carlo Simulation there are various variables. 
 
     - The price today (S0)
     - Simulation time length (N = 252 -- Number of trading days in a year)
-    - Number of iteration (simulation_iterations = 1000)
+    - Number of iterations (simulation_iterations = 1000)
     - mu (mu = 0.0002)
     - sigma (sigma = 0.01)
 
-    The code below is represntation of this and essential calculates the stock price of each of the next 252 trading days a thousand times using the Monte Carlo formula
+    The code below is a representation of this and essentially calculates the stock price of each of the next 252 trading days a thousand times using the Monte Carlo formula
 
-    The `prices[-1] * np.exp((mu - 0.5 * sigma ** 2) + sigma * np.random.normal())` formula is used to calculate the stock price. It based on Ito Lemma stochastic process iwth the Wiener-process in a random walk
+    The `prices[-1] * np.exp((mu - 0.5 * sigma ** 2) + sigma * np.random.normal())` formula is used to calculate the stock price. It based on Ito Lemma stochastic process with the Wiener process in a random walk
 
 
      ```
@@ -55,28 +55,28 @@
 
     *What is Black-Scholes Model?*
 
-    > The Black-Scholes Model is a mathematical formula with can used to calculate option contract prices
+    > The Black-Scholes Model is a mathematical formula which can be used to calculate option contract prices
 
-    In this case we are using Black Scholes is being used for the purpose of pricing call (right to buy) and put (right to sell) options
+    In this case, we are using Black Scholes is being used for pricing call (right to buy) and put (right to sell) options
 
 
     *Setup*
     
-     I focused on CCF stock where we get the stokc price 'today'. In order to use the Blac-Scholes model there are various variables. 
+     I focused on CCF stock where we get the stock price 'today'. Using the Black-Scholes model there are various variables. 
 
      - The price today (S0)
-     - the strike price (E -- the price at which a put or call can be exectued)
+     - the strike price (E -- the price at which a put or call can be executed)
      - Expiry (T -- Set to 1 year / 365 days)
-     - Risk-Free Rate (rf -- The market risk free rate for the USA)
+     - Risk-Free Rate (rf -- The market risk-free rate for the USA)
      - Volatility (sigma -- a standard deviation of the log returns which calculates the volatility of the underlying stock)
 
-    With the Black-Scholes model we have to caulcate two additional parameters `d1` and `d2`. 
+    With the Black-Scholes model we have to calculate two additional parameters `d1` and `d2`. 
 
     `d1 = (log(S/E)+(rf+sigma*sigma/2.0)*T)/(sigma*sqrt(T))`
 
     `d2 = d1-sigma*sqrt(T)`
 
-    These two equations help solve the black-Scholes equation itself. After all of these variables are declared and calculated we can price call and put options as follows.
+    These two equations help solve the Black-Scholes equation itself. After all of these variables are declared and calculated we can price call and put options as follows.
 
     ```
     # Call Option Pricing
@@ -90,14 +90,14 @@
 
 3. Black Scholes Monte Carlo Implementation -- [BlackScholesMonteCarloImplementation.py](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/src/BlackScholesMonteCarloImplementation.py)
 
-    This is the combined implementation between Monte Carlo Simulation and Black-Scholes Option Pricing. In this code we start with an initial price of CCF stock ($101.38), set a strike price ($95) and after running the Monte Carlo simulation for 2000 interations we end up with:
+    This is the combined implementation between Monte Carlo Simulation and Black-Scholes Option Pricing. In this code, we start with an initial price of CCF stock ($101.38), set a strike price ($95) and after running the Monte Carlo simulation for 2000 iterations we end up with:
     
     - Value of call option: $13.18
     - Value of put option: $3.83
 
-    The formulation if very similar to the equations shown above in the first two basic exmaples. Instead of directly returning the call and put option prices we retun the mean of these prices as per the 2000 iterations. This leads to theoretically a more accurate result.    
+    The formulation is very similar to the equations shown above in the first two basic examples. Instead of directly returning the call and put option prices we return the mean of these prices as per the 2000 iterations. This leads to theoretically a more accurate result.    
 
-    These code for be used ot run a simulation on any stock. The stock can be passed in through the `get_data()` call. Then the strike price and number of itertaions is inputted by the user
+    This code can be used to simulate any stock. The stock can be passed in through the `get_data()` call. Then the strike price and number of iterations is inputted by the user
 
     ```
     strike_price = float(input('Select the Strike Price: $'))
@@ -108,13 +108,12 @@
 
 ### **Next Steps**
 
-- This project could be expanded to an actual application where users could input a stock of there choice and see option pricing
+- This project could be expanded to an actual application where users could input a stock of their choice and see option pricing
 
 ---
 
 ### **Additional Notes**
 
 - Yahoo Finance used to extract stock data
-- Numerical Results of the model is attached in [results.txt](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/Results.txt)
-
-
+- Numerical Results of the model are attached in [results.txt](https://github.com/harshp30/BlackScholesOptionsPricing/blob/main/Results.txt)
+- The code blocks above are not complete, to view the full code go to the src files
